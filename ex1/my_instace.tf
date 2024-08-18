@@ -8,6 +8,7 @@ resource "aws_instace" "crispy" {
     availability_zone = "us-west-2a"
     key_name = "crispy-key"
     vpc_security_group_ids = ["sg-063ea78c79c5ba038"]
-    tags =
+    tags = {
       Name = "Crispy-Chicken"
+    }
 }
