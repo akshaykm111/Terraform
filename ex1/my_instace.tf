@@ -10,5 +10,6 @@ resource "aws_instace" "crispy" {
     vpc_security_group_ids = ["sg-063ea78c79c5ba038"]
     tags = {
       Name = "Crispy-Chicken"
+      Project = "Food-Order"
     }
 }
