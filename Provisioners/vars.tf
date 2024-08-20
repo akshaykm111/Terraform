@@ -13,7 +13,7 @@ variable "REGION" {
   variable "AMIS" {
     type = map(any)
     default = {
-      us-west-2 = "ami-094cc0ced7b91fcf0"
+      us-west-2 = "ami-094cc0ced7b91fcf0"  # CentOS-Stream-ec2-9, us-west-2
       us-east-2 = "ami-0862be96e41dcbf74"
     }
   }
