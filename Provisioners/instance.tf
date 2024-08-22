@@ -34,3 +34,11 @@ resource "aws_key_pair" "sample-key" {
       host        = self.public_ip
     }
   }
+
+output "PublicIP" {
+    value = aws_instance.sample-inst.public_ip
+}
+  
+output "PrivateIP" {
+  value = aws_instance.sample-inst.private_ip
+}
