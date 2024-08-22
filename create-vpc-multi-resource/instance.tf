@@ -1,3 +1,5 @@
+# first generate public-key & private-key by using command (ssh-keygen -f ./samplekey -N "")
+
 resource "aws_key_pair" "sample-key" {
     key_name   = "crispykey"
     public_key = file("samplekey.pub")
