@@ -1,6 +1,8 @@
+# first generate public-key & private-key by using command (ssh-keygen -f ./samplekey -N "")
+
 resource "aws_key_pair" "sample-key" {
     key_name   = "crispykey"
-    public_key = file("samplekey.pub") # generate public-key & private-key  i.e [ssh-keygen],name=samplekey
+    public_key = file("samplekey.pub")
   }
   
   resource "aws_instance" "sample-inst" {
@@ -28,15 +30,7 @@ resource "aws_key_pair" "sample-key" {
   
     connection {
       user        = var.USER
-      private_key = file("samplekey")   # generate public-key & private-key  i.e [ssh-keygen],name=samplekey
+      private_key = file("samplekey")
       host        = self.public_ip
     }
-  }
-
-  output "PublicIP" {
-    value = aws_instance.sample-inst.public_ip
-  }
-  
-  output "PrivateIP" {
-    value = aws_instance.sample-inst.private_ip
   }
